@@ -1,0 +1,131 @@
+//Task1
+public class UniversityTester {
+  public static void main(String[] args) {
+    //A
+    University u1 = new University();
+    University u2 = new University();
+    
+    System.out.println("Location of uni1: " + u1);
+    System.out.println("Location of uni2: " + u2);
+    System.out.println(u1.name);
+    System.out.println(u1.country);
+    System.out.println(u2.name);
+    System.out.println(u2.country);
+    //B
+    u1.name = "Imperial College London";
+    u1.country = "England";
+    u2.name = "Brac University";
+    u2.country = "Bangladesh";
+    
+    System.out.println(u1.name);
+    System.out.println(u1.country);
+    System.out.println("-----------------------");
+    System.out.println(u2.name);
+    System.out.println(u2.country);
+  }
+}
+
+//Task2
+public class Test2{
+  public static void main(String [] args){
+    Circle r = new Circle();
+    System.out.println("Radius of the circle is " + r.radius);
+    System.out.println("The area of the circle is " + (3.1416*r.radius*r.radius));
+    System.out.println("The circumference of the circle is " + (2.0*3.1416*r.radius));
+  }
+}
+
+//Task3
+public class Student{
+  String name = "Bob";
+  int id = 1;
+}
+
+//Task4
+public class Vehicle{
+  String type = "Car";
+  int wheels = 4;
+  String color = "White";
+}
+
+//Task5
+public class Tournament{
+  String name;
+  String sportsType;
+  int numberOfTeams;
+  String [] teams ;
+}
+
+//Task6
+public class ImaginaryNumber{
+  int realPart = 0;
+  int imaginaryPart = 0;
+  public void printNumber(){
+    System.out.println(realPart +" + "+ imaginaryPart+"i");
+  }
+}
+
+//Task7
+public class Cat{
+  String color = "White";
+  String action = "sitting";
+  public void printCat(){
+    System.out.println(color+" cat is "+action);
+  }
+}
+
+//Task8
+public class Bird {
+  String name;
+  int height = 0;
+  public void makeNoise() {
+    if("Parrot".equals(this.name)) {
+      System.out.println("Squawk");
+    }else if ("Eagle".equals(this.name)) {
+      System.out.println("Squee");
+    }
+  }
+  public void flyUp(int feet) {
+    this.height += feet;
+    System.out.println(this.name + " has flown up " + feet + " feet.");
+  }
+  public void flyDown(int feet) {
+    if (this.height < feet) {
+      System.out.println(this.name + " cannot fly down " + feet + " feet.");
+    } else {
+      this.height -= feet;
+      if (this.height == 0) {
+        System.out.println(this.name + " has flown down " + feet + " feet and landed.");
+      } else {
+        System.out.println(this.name + " has flown down " + feet + " feet.");
+      }
+    }
+  }
+}
+
+
+//Task9
+public class CellPhone {
+  String model = "unknown";
+  String[] contacts = new String[3];
+  int Count = 0;
+  public void storeContact(String name) {
+    if (this.Count < this.contacts.length) {
+      this.contacts[this.Count] = name;
+      this.Count++;
+      System.out.println("Contact Stored");
+    } else {
+      System.out.println("Memory full. New name can't be stored.");
+    }
+  }
+  public void printDetails() {
+    System.out.println("Phone Model " + model);
+    System.out.println("Contacts Stored " + this.Count);
+    if (this.Count > 0) {
+      System.out.println("Stored Contacts:");
+      for (int i = 0; i < this.Count; i++) {
+        System.out.println(this.contacts[i]);
+      }
+    }
+  }
+}

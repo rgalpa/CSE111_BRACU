@@ -1,0 +1,322 @@
+//Task 1
+public class Student{
+  public String name;
+  public String prog;
+  public Student(String a, String b){
+    name = a;
+    prog = b;
+  }
+  public void updateName(String a){
+    name = a;
+  }
+  public String accessName(){
+    return name;
+  }
+  public void updateProgram(String a){
+    prog = a;
+  }
+  public String accessProgram(){
+    return name;
+  }
+}
+
+//Task 2
+public class Toy{
+  public String name;
+  public int price;
+  public Toy(String a,int b){
+    name = a;
+    price = b;
+    System.out.println("A new toy has been made!");
+  }
+  public void updateName(String a){
+    System.out.println("Changing old name: "+name);
+    name = a;
+    System.out.println("new name: "+name);
+  }
+  public void updatePrice(int a){
+    price = a;
+  }
+  public void showPrice(){
+    System.out.println("price: "+price+"Taka");
+  }
+}
+
+//Task 3
+public class Parcel {
+  String name;
+  int weight;
+  double fee;
+  public Parcel() {
+    name = null;
+    weight = 0;
+    fee = 0;
+  }
+  public Parcel(String n) {
+    name = n;
+    weight = 0;
+    fee = 0;
+  }
+  public Parcel(String n, int w) {
+    name = n;
+    weight = w;
+    fee = 0;
+  }
+  public void addWeight(int add) {
+    weight += add;
+    System.out.println("Updated Weight: " + weight);
+  }
+  public void calcFee(String location) {
+    if (location.equals("Dhanmondi")) {
+      fee = (weight * 20) + 50;
+      
+    } else {
+      fee = (weight * 20);
+    }
+  }
+  public void printDetails() {
+    if (name == null) {
+      System.out.println("Set name first");
+    } else {
+      System.out.println("Name: " + name);
+      System.out.println("Total Weight: " + weight);
+      System.out.println("Total Fee: " + fee);
+    }
+  }
+}
+
+//Task 4
+public class Shape2D {
+  public int length;
+  public int breadth;
+  public int height;
+  public int side1, side2, side3;
+  public double area;
+  public String shape;
+
+  public Shape2D(int l) {
+    length = l;
+    shape = "Square";
+    System.out.println("A Square has been created with length: " + l);
+    area = l * l;
+  }
+  public Shape2D(int l, int b) {
+    length = l;
+    breadth = b;
+    shape = "Rectangle";
+    System.out.println("A Rectangle has been created with length: " + l + " and breadth: " + b);
+    area = l * b;
+  }
+  public Shape2D(int h, int b, String s) {
+    height = h;
+    breadth = b;
+    shape = "Triangle";
+    System.out.println("A Triangle has been created with height: " + h + " and base: " + b);
+    area = 0.5 * h * b;
+  }
+  public Shape2D(int a, int b, int c) {
+    side1 = a;
+    side2 = b;
+    side3 = c;
+    shape = "Triangle";
+    System.out.println("A Triangle has been created with the following sides: " + side1 + ", " + side2 + ", " + side3);
+    int s = (a+b+c)/2;
+    area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));;
+  }
+  public void area() {
+    System.out.println("The area of the "+ shape +" is: " + area);
+  }
+}
+
+//Task 5
+public class Book {
+  public String title;
+  public String author;
+  public int price;
+  
+  public Book(String t) {
+    title = t;
+    author = null;
+    price = 0;
+  }
+  public Book(String t, String a) {
+    title = t;
+    author = a;
+    price = 0;
+  }
+  public Book(String t, String a, int p) {
+    title = t;
+    author = a;
+    price = p;
+  }
+  public void setDetails(int p) {
+    price = p;
+  }
+  public void setDetails(String a, int p) {
+    author = a;
+    price = p;
+  }
+  public void displayDetails() {
+    if (author == null && price == 0) {
+      System.out.println("Title: " + title);
+    } else if (price == 0) {
+      System.out.println("Title: " + title + ", Author: " + author);
+    } else if (author == null) {
+      System.out.println("Title: " + title + ", Price: " + price);
+    }else {
+      System.out.println("Title: " + title + ", Author: " + author + ", Price: " + price);
+    }
+  }
+}
+
+//Task 6
+public class Product{
+  private String name;
+  private double price;
+  private int quantity;
+  
+  public Product(){
+    name = "Unknown";
+  }
+  public Product(String n,double p){
+    name = n;
+    price = p;
+  }
+  public void displayInfo(){
+    System.out.println("Product Name: "+name);
+    System.out.println("Price: $"+price);
+  }
+  public void setQuantity(int n){
+    quantity = n;
+  }
+  public void displayInfo(boolean a){
+    displayInfo();
+    if(a){
+      System.out.println("Quantity: "+quantity);
+    }
+  }
+  public double getPrice(){
+    return price;
+  }
+  public int getQuantity(){
+    return quantity;
+  }
+}
+
+//Task 7
+public class Student {
+  private int id;
+  private double cgpa;
+  private String[] courses;
+  private int count;
+  
+  public Student(int x) {
+    id = x;
+    cgpa = 0.0; 
+    courses = new String[4];
+    count = 0;
+  }
+  public Student(int x, double y) {
+    id = x;
+    cgpa = y;
+    courses = new String[4];
+    count = 0;
+  }
+  public void setCG(double y) {
+    cgpa = y;
+  }
+  public void setID(int x) {
+    id = x;
+  }
+  public void addCourse(String course) {
+    if (cgpa == 0.0) {
+      System.out.println("Failed to add " + course);
+      System.out.println("Set CG first");
+    } else if (cgpa < 3.0 && count >= 3) {
+      System.out.println("Failed to add " + course);
+      System.out.println("CG is low. Can't add more than 3 courses.");
+    } else if (count >= 4) {
+      System.out.println("Failed to add " + course);
+      System.out.println("Maximum 4 courses allowed.");
+    } else {
+      courses[count] = course;
+      count++;
+    }
+  }
+  public void addCourse(String[] courseArr) {
+    for (int i = 0; i < courseArr.length; i++) {
+      addCourse(courseArr[i]);
+    }
+  }
+  public void rmAllCourse() {
+    for (int i = 0; i < count; i++) {
+      courses[i] = null; 
+    }
+    count = 0;
+  }
+  public void showAdvisee() {
+    System.out.println("Student ID: " + id + ", CGPA: " + cgpa);
+    if (count == 0) {
+      System.out.println("No courses added.");
+    } else {
+      System.out.print("Added courses are:\n");
+      for (int i = 0; i < count; i++) {
+        System.out.print(courses[i] + " ");
+      }
+      System.out.println();
+    }
+  }
+}
+
+//Task 8
+public class ABCServer {
+  private String name;
+  private int capacity;
+  private String[] members;
+  private String[] roles;
+  private int totalMembers;
+  
+  public ABCServer() {
+    name = "Default";
+    capacity = 10;
+    members = new String[capacity];
+    roles = new String[capacity];
+    totalMembers = 0;
+  }
+  public ABCServer(String n, int cap) {
+    name = n;
+    capacity = cap;
+    members = new String[capacity];
+    roles = new String[capacity];
+    totalMembers = 0;
+  }
+  public void addMembers(String member) {
+    if (totalMembers < capacity) {
+      members[totalMembers] = member;
+      roles[totalMembers] = "Rising Hero";
+      totalMembers++;
+      System.out.println("Rising Hero is added.");
+    } else {
+      System.out.println("Sorry, maximum capacity exceeded!");
+    }
+  }
+  public void addMembers(String member, String role) {
+    if (totalMembers < capacity) {
+      members[totalMembers] = member;
+      roles[totalMembers] = role;
+      totalMembers++;
+      System.out.println(role + " is added.");
+    } else {
+      System.out.println("Sorry, maximum capacity exceeded!");
+    }
+  }
+  public void details() {
+    System.out.println("Server Name: " + name);
+    System.out.println("Member Capacity: " + capacity);
+    System.out.println("Total Members: " + totalMembers);
+    System.out.println("Members:");
+    for (int i = 0; i < totalMembers; i++) {
+      System.out.println("Name:Role --> " + members[i] + ":" + roles[i]);
+    }
+  }
+}
