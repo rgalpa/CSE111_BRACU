@@ -1,2 +1,2 @@
 # CSE111_BRACU
-Assignment Solve (CSE111_Summer24)
+Lab Assignment Solve (CSE111_Summer24)
